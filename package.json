@@ -1,0 +1,16 @@
+{
+    "date": "Tue Mar 27 11:51:03 CEST 2018",
+    "name": "testgit",
+    "format": "xml",
+    "description": "",
+    "repository": {
+        "origin": {
+            "password": "Cite1993?",
+            "uri": "https://github.com/roprasp/moduletest.git",
+            "username": "roprasp"
+        },
+        "type": "git"
+    },
+    "version": "0.1",
+    "dependencies": [{"Simplicite": "4.0"}]
+}
