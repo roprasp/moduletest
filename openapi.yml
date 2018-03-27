@@ -56,6 +56,36 @@ paths:
             application/json: {}
       tags:
       - Application
+  /rest/testesttest:
+    get:
+      security:
+      - bearerAuth: []
+      description: Get business object metadata or search records
+      operationId: obj-testesttest-search
+      responses:
+        '200':
+          description: Business object metadata or records of search result
+          content:
+            application/json: {}
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: boolean
+        in: query
+        name: _metadata
+        description: Metadata?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _doc
+        description: Documentation?
+        required: false
+      tags:
+      - testesttest
   /rest:
     get:
       security:
@@ -81,6 +111,111 @@ paths:
         required: false
       tags:
       - Application
+  /rest/testesttest/{row_id}:
+    post:
+      security:
+      - bearerAuth: []
+      description: Create business object record
+      operationId: obj-testesttest-create
+      responses:
+        '200':
+          description: Created business object record
+          content:
+            application/json: {}
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      tags:
+      - testesttest
+    get:
+      security:
+      - bearerAuth: []
+      description: Get business object record
+      operationId: obj-testesttest-get
+      responses:
+        '200':
+          description: Business object record
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_documents
+        description: Inline documents?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_objects
+        description: Inline objects?
+        required: false
+      tags:
+      - testesttest
+    delete:
+      security:
+      - bearerAuth: []
+      description: Delete business object record
+      operationId: obj-testesttest-delete
+      responses:
+        '200':
+          description: Business object deletion confirmation
+          content:
+            application/json: {}
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      tags:
+      - testesttest
+    put:
+      security:
+      - bearerAuth: []
+      description: Update business object record
+      operationId: obj-testesttest-update
+      responses:
+        '200':
+          description: Updated business object record
+          content:
+            application/json: {}
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      tags:
+      - testesttest
 info:
   license:
     name: Simplicite license
